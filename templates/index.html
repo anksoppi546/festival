@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Holi 🎉</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <div class="fireworks-container"></div> <!-- For animation effects -->
+
+    <!-- This text will change dynamically -->
+    <h1 id="messageText">🎉 Happy Holi 🎉</h1>
+
+    {% if name %}
+        <script>
+            document.getElementById("messageText").innerHTML = "🤩 Ankit Soppi wishes you 🤩";
+        </script>
+         <!-- Animated Happy Diwali message -->
+         <h1 id="diwaliMessage" class="happy-diwali-text">
+            🎉 Happy Holi <span id="userName">{{ name }}</span> 🎉
+        </h1>
+    {% else %}
+        <form method="post">
+            <input type="text" name="name" placeholder="Enter your name" required>
+            <button type="submit">Celebrate 🤩</button>
+        </form>
+    {% endif %}
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script> <!-- JavaScript for animations -->
+</body>
+</html>

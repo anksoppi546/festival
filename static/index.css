@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #1e1e1e;
+    background: url("../static/holi.jpg") no-repeat center center fixed;
+    background-size: 100% 100%;  /* Ensures full width & height fit */
+    color: rgb(255, 255, 255);
+    text-shadow: 3px 3px 5px rgb(0, 0, 0);
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Ensure proper scaling for all devices */
+@media screen and (max-width: 768px) {
+    body {
+        background-size: cover; /* Adjusts for smaller screens */
+    }
+}
+
+.color-splash {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 1;
+    transform: scale(1);
+    animation: splashEffect 2s linear forwards;
+}
+
+
+/* Animation for splash effect */
+@keyframes splashEffect {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
+}
+
+h1 {
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+/* Happy Diwali Message Animation */
+.diwali-message {
+    font-size: 50px;
+    font-weight: bold;
+    color: yellow;
+    text-shadow: 3px 3px 5px orange;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: fadeInScale 1.5s forwards;
+}
+
+/* Floating Sparkles */
+.fireworks-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.sparkle {
+    position: absolute;
+    font-size: 25px;
+    color: gold;
+    opacity: 0;
+    animation: floatUp 4s linear infinite;
+}
+
+@keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) translateX(10px);
+        opacity: 0;
+    }
+}
+
+input, button {
+    padding: 10px;
+    font-size: 18px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+input {
+    width: 250px;
+}
+
+button {
+    background: rgb(80, 239, 80);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+button:hover {
+    background: darkorange;
+}
+
+.happy-diwali-text {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-shadow: 3px 3px 10px rgba(126, 239, 92, 0.8);
+    animation: zoomInOut 1s ease-in-out infinite alternate;
+}
+
+/* Zoom In & Out Animation */
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
